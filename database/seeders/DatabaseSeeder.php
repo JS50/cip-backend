@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Todo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         \App\Models\Todo::factory(5)->create();
+         Todo::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
