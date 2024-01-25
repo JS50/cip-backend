@@ -33,13 +33,8 @@ class TodoController extends Controller
         return response('success');
     }
     public function update(Todo $todo){
-
-        $attributes = [
-            'task' => $todo->task,
-            'done' => !$todo->done
-        ];
-
-        $todo->update($attributes);
+        $todo->done = !$todo->done;
+        $todo->save();
         return response('success');
     }
 
