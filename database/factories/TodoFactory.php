@@ -18,8 +18,7 @@ class TodoFactory extends Factory
     {
         return [
             'task' => fake()->colorName,
-            'done' => fake()->boolean,
-            'uhrzeit' => '23.1.2024 16:17 Uhr'
+            'done' => fake()->boolean
         ];
     }
 }

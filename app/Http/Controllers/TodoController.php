@@ -19,8 +19,7 @@ class TodoController extends Controller
     public function store(){
         $attributes = request()->validate([
             'task' => 'required',
-            'done' => 'required',
-            'uhrzeit' => 'required'
+            'done' => 'required'
         ]);
         $newTodo = Todo::create($attributes);
         return response($newTodo);
@@ -37,8 +36,7 @@ class TodoController extends Controller
 
         $attributes = [
             'task' => $todo->task,
-            'done' => !$todo->done,
-            'uhrzeit' => $todo->uhrzeit
+            'done' => !$todo->done
         ];
 
         $todo->update($attributes);

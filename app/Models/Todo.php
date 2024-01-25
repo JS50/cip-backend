@@ -11,17 +11,4 @@ class Todo extends Model
 {
     use HasFactory;
     protected $guarded=[];
-
-//    public function created_at(): Attribute
-//    {
-//        return new Attribute(
-//            set: fn($value) => $value,
-//            get: fn($value) => $value->diffForHumans(),
-//        );
-//    }
-
-//    public function getCreatedAtAttribute($date)
-//    {
-//        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
-//    }
 }

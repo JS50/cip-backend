@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('task');
             $table->boolean('done');
             $table->timestamps();
-            $table->string('uhrzeit');
         });
     }
 
