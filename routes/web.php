@@ -17,7 +17,6 @@ Route::controller(TodoController::class)->group(function (){
     Route::prefix('/todos')->group(function () {
         Route::get('', 'index'); //get all todos
         Route::post('', 'store'); //create new todo
-        Route::delete('', 'destroyAll'); //delete all todos
 
         Route::patch('/{todo}', 'update'); //toggle done of todo
         Route::delete('/{todo}', 'destroy'); //delete a todo

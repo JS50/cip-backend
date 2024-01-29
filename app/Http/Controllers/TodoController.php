@@ -23,10 +23,6 @@ class TodoController extends Controller
         $newTodo = Todo::create($attributes);
         return response($newTodo);
     }
-    public function destroyAll(){
-        DB::table('todos')->delete();
-        return response('success');
-    }
     public function destroy(Todo $todo){
         $todo->delete();
         return response('success');
