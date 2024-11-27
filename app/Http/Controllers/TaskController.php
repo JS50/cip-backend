@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use Illuminate\Http\Request;
 
 
 class TaskController extends Controller
@@ -79,15 +80,20 @@ class TaskController extends Controller
     {
         if (Task::where('id', $id)->exists()) {
             $task = Task::find($id);
-            $task->task = $request->task ?? $task->task;
-            $task->completed = $request->completed ?? $task->completed; // Use 'completed'
+
+            // Update only the 'completed' field if it's present in the request
+            if ($request->has('completed')) {
+                $task->completed = $request->completed;
+            }
+
             $task->save();
 
-            return response()->json(["message" => "Task updated successfully"], 200);
+            return response()->json(["message" => "Task updated successful"], 200);
         } else {
             return response()->json(['message' => 'task not found'], 404);
         }
     }
+
 
 
     /**
